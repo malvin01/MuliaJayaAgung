@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//sub group shop
+Route::group([
+    'prefix' => 'shops',
+    'as' => 'shops.',
+], function(){
+        Route::get('/', [App\Http\Controllers\Shop\HomeController::class,'index'])->name('shop.index');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
