@@ -60,6 +60,11 @@ Route::group(['middleware' => 'auth'], function() {
             ['except' => ['show']]
         );
 
+        Route::get('/products/check-slug', [
+            App\Http\Controllers\Admin\ProductController::class,
+            'checkSlug'
+        ])->name('products.checkSlug');
+
         Route::resource(
             'products',
             'App\Http\Controllers\Admin\ProductController',

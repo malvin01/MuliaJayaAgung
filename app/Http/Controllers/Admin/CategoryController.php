@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 
-
 class CategoryController extends Controller
 {
     /**

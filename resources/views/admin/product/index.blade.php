@@ -35,12 +35,12 @@
                                                    <td>{{ $product->name }}</td>
                                                    <td>{{ $product->category->name }}</td>
                                                    <td>Rp. {{ number_format($product->price,0, ',' , '.') }}</td>
-                                                   <td>{{ Carbon\Carbon::parse($category->created_at)->format('d F, Y H:i:s') }}
-                                                        ({{ \Carbon\Carbon::parse($category->created_at)->diffForHumans() }})</td>
+                                                   <td>{{ Carbon\Carbon::parse($product->created_at)->format('d F, Y H:i:s') }}
+                                                        ({{ \Carbon\Carbon::parse($product->created_at)->diffForHumans() }})</td>
                                                    <td>
                                                     <div class="d-flex">
-                                                        <a href="{{ route('admin.products.edit', $category->id) }}" class="btn btn-primary me-1 mb-1">Edit</a>
-                                                        <form action="{{ route('admin.products.destroy', $category->id) }}"
+                                                        <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-primary me-1 mb-1">Edit</a>
+                                                        <form action="{{ route('admin.products.destroy', $product->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
